@@ -48,7 +48,12 @@ public class Sort {
 		return merge(b, c);
 	}
 	
-	
+	/**
+	 * [quickSort algorithm implementation]
+	 * @param A [the unorded array]
+	 * @param l [lower index]
+	 * @param r [higher index (A.length-1)]
+	 */
 	public static void quickSort(int[] A, int l, int r) {
 		if (l >= r)
 			return;
