@@ -83,6 +83,35 @@ public class SinglyLinkedListOperations {
     }
 
     @Test
+    public void testSinglyLinkedListDeleteAtHead() {
+        SinglyLinkedList<Integer> singlyLinkedList = new SinglyLinkedList<>();
+        singlyLinkedList.insertAtEnd(1);
+        singlyLinkedList.insertAtEnd(3);
+        singlyLinkedList.insertAtEnd(5);
+        singlyLinkedList.insertAtEnd(7);
+
+        singlyLinkedList.deleteAtHead();
+        Assertions.assertThat(singlyLinkedList.toList()).containsExactly(3, 5, 7);
+        Assertions.assertThat(singlyLinkedList.size()).isEqualTo(3);
+
+        singlyLinkedList.deleteAtHead();
+        Assertions.assertThat(singlyLinkedList.toList()).containsExactly(5, 7);
+        Assertions.assertThat(singlyLinkedList.size()).isEqualTo(2);
+
+        singlyLinkedList.deleteAtHead();
+        Assertions.assertThat(singlyLinkedList.toList()).containsExactly(7);
+        Assertions.assertThat(singlyLinkedList.size()).isEqualTo(1);
+
+        singlyLinkedList.deleteAtHead();
+        Assertions.assertThat(singlyLinkedList.toList()).containsExactly();
+        Assertions.assertThat(singlyLinkedList.size()).isEqualTo(0);
+
+        singlyLinkedList.deleteAtHead();
+        Assertions.assertThat(singlyLinkedList.toList()).containsExactly();
+        Assertions.assertThat(singlyLinkedList.size()).isEqualTo(0);
+    }
+
+    @Test
     public void testSinglyLinkedListDeleteByValue() {
         SinglyLinkedList<Integer> singlyLinkedList = new SinglyLinkedList<>();
         singlyLinkedList.insertAtEnd(1);
